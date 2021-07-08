@@ -1,1 +1,129 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover, .menu__link:focus > a, a:focus {
+  color: #97d9ff;
+}
+
+a:focus {
+  border: none;
+  outline: none;
+}
+
+.on-hover, .menu__link .link__icon {
+  transition-property: fill, color;
+  transition-duration: 0.2s;
+}
+
+.on-hover:hover, .menu__link:focus > .on-hover, .menu__link .link__icon:hover, .menu__link:focus > .link__icon {
+  color: #97d9ff;
+  fill: #97d9ff;
+}
+
+.menu__link {
+  opacity: 0;
+  transform: translateX(100%) scale(0.1);
+  transition-property: opacity, transform;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.menu__link .link__icon {
+  width: 50px;
+  cursor: pointer;
+  fill: white;
+}
+.burger {
+  z-index: 2;
+}
+.burger__check {
+  width: 0;
+  margin: 0;
+}
+.burger__check:checked ~ a {
+  opacity: 1;
+  transform: translateX(0);
+}
+.burger__check:focus ~ .menu__burger .burger__icon, .burger__icon:hover, .menu__link:focus > .burger__icon {
+  stroke: #97d9ff;
+}
+.burger__icon {
+  width: 50px;
+  cursor: pointer;
+  stroke: white;
+  transition: stroke 0.2s linear;
+}
+.burger__icon * {
+  fill: none;
+  stroke: inherit;
+  stroke-width: 6;
+  transition-property: stroke-dasharray, stroke-dashoffset;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.burger__icon > *:nth-child(1) {
+  stroke-dasharray: 60 207;
+}
+.burger__icon > *:nth-child(2) {
+  stroke-dasharray: 60 60;
+}
+.burger__icon > *:nth-child(3) {
+  stroke-dasharray: 60 207;
+}
+.burger__check:checked ~ .menu__burger .burger__icon > *:nth-child(1) {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+}
+.burger__check:checked ~ .menu__burger .burger__icon > *:nth-child(2) {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+}
+.burger__check:checked ~ .menu__burger .burger__icon > *:nth-child(3) {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+}
+
+.svg-sprite__unvisible {
+  display: none;
+}
+
+.body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px calc(50vw - 700px);
+  background-color: #215f21;
+  color: white;
+  min-height: 100px;
+}
+.header > * {
+  margin: 0 20px;
+  box-sizing: border-box;
+}
+.header .header__brand {
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+.header__menu, .header__menu > * {
+  position: relative;
+}

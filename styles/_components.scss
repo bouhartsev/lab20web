@@ -1,0 +1,89 @@
+@use "sass:color";
+@use '_base' as base;
+
+.on-hover {
+    transition-property: fill, color;
+    transition-duration: 0.2s;
+}
+.on-hover:hover {
+    color: base.$hover-color;
+    fill: base.$hover-color;
+}
+
+.menu__link {
+    opacity: 0;
+    transform: translateX(100%) scale(0.1);
+    transition-property: opacity, transform;
+    @include base.burger-transition;
+
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+
+    .link__icon {
+        @include base.icon;
+        @extend .on-hover;
+        fill: color.adjust(base.$base-color, $lightness: 100%);
+    }
+
+    &:focus>* {
+        @extend :hover;
+    }
+}
+
+.burger {
+    z-index: 2;
+
+    &__check {
+        width: 0;
+        margin: 0;
+    }
+
+    &__check:checked ~ a {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    &__check:focus ~ .menu__burger &__icon, &__icon:hover {
+        stroke: base.$hover-color;
+    }
+
+    &__icon {
+        @include base.icon;
+
+        stroke: color.adjust(base.$base-color, $lightness: 100%);
+        transition: stroke 0.2s linear;
+
+        * {
+            fill: none;
+            stroke: inherit;
+            stroke-width: 6;
+            transition-property: stroke-dasharray, stroke-dashoffset;
+            @include base.burger-transition;
+        }
+        >*:nth-child(1) {
+            stroke-dasharray: 60 207;
+        }
+        >*:nth-child(2) {
+            stroke-dasharray: 60 60;
+        }
+        >*:nth-child(3) {
+            stroke-dasharray: 60 207;
+        }
+    }
+
+    &__check:checked ~ .menu__burger &__icon {
+        >*:nth-child(1) {
+            stroke-dasharray: 90 207;
+            stroke-dashoffset: -134;
+        }
+        >*:nth-child(2) {
+            stroke-dasharray: 1 60;
+            stroke-dashoffset: -30;
+        }
+        >*:nth-child(3) {
+            stroke-dasharray: 90 207;
+            stroke-dashoffset: -134;
+        }
+    }
+}
