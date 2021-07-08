@@ -26,6 +26,10 @@
             <symbol id="icon_home" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8,17 L8,11 L12,11 L12,17 L17,17 L17,9 L20,9 L10,0 L0,9 L3,9 L3,17 L8,17 Z"/>
             </symbol>
+            <symbol id="icon_search" xmlns="http://www.w3.org/2000/svg">
+                <circle stroke-width="2" r="9" cx="14" cy="14"/>
+                <line stroke-width="2" x1="27" x2="21" y1="27" y2="21"/>
+            </symbol>
         </svg>
     </noindex>
     
@@ -36,6 +40,11 @@
             <a href="/home" target="_blank" class="menu__link" tabindex="3">
                 <svg aria-label="Home" class="link__icon" viewBox="0 0 20 20">
                     <use xlink:href="#icon_home"></use>
+                </svg>
+            </a>
+            <a href="/search" target="_blank" class="menu__link" tabindex="4">
+                <svg aria-label="Search" class="link__icon" viewBox="0 0 32 32">
+                    <use xlink:href="#icon_search"></use>
                 </svg>
             </a>
             <label for="burger_check" class="menu__burger burger">
@@ -49,15 +58,15 @@
     </header>
     
     <main class="main">
-        <svg aria-label="Business icon"  width="48" height="48" viewBox="0 0 48 41" xmlns="http://www.w3.org/2000/svg" class="feature__icon">
-            <use xlink:href="#icon_case"></use>
-        </svg>   
+         <!-- Lamp with turning on (svg+js) -->
+         <!-- Open modal button -->
+         <!-- Modal with close button, watch with current time and text "Time to give an 'A'!" -->
     </main>
 
     <footer class="footer">
         <a href="https://github.com/bouhartsev/lab20web">GitHub Link</a>
         <a href="//bouhartsev.top">Матвей Бухарцев</a>
-        <p>2021</p>
+        <time>2021</time>
     </footer>
 
     <script src="main.js" type="text/javascript"></script>

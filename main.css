@@ -26,7 +26,7 @@ a:focus {
 
 .on-hover:hover, .menu__link:focus > .on-hover, .menu__link .link__icon:hover, .menu__link:focus > .link__icon {
   color: #97d9ff;
-  fill: #97d9ff;
+  stroke: #97d9ff;
 }
 
 .menu__link {
@@ -42,11 +42,13 @@ a:focus {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  margin: 0 0.5em;
 }
 .menu__link .link__icon {
   width: 50px;
   cursor: pointer;
-  fill: white;
+  fill: none;
+  stroke: white;
 }
 .burger {
   z-index: 2;
@@ -126,4 +128,13 @@ a:focus {
 }
 .header__menu, .header__menu > * {
   position: relative;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer * {
+  margin: 2px 0;
 }

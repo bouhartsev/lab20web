@@ -7,7 +7,8 @@
 }
 .on-hover:hover {
     color: base.$hover-color;
-    fill: base.$hover-color;
+    // fill: base.$hover-color;
+    stroke: base.$hover-color;
 }
 
 .menu__link {
@@ -19,11 +20,14 @@
     display: inline-block;
     width: fit-content;
     height: fit-content;
+    margin: 0 0.5em;
 
     .link__icon {
         @include base.icon;
         @extend .on-hover;
-        fill: color.adjust(base.$base-color, $lightness: 100%);
+        fill: none;
+        // fill: color.adjust(base.$base-color, $lightness: 100%);
+        stroke: color.adjust(base.$base-color, $lightness: 100%);
     }
 
     &:focus>* {
