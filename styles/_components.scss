@@ -92,7 +92,32 @@
     }
 }
 
+.lamp {
 
+    width: 300px;
+
+    >* {
+        fill: none;
+        stroke: black;
+        stroke-width: 10px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+    }
+
+    &__ray {
+        stroke: yellow;
+        visibility: hidden;
+    }
+
+    &__container.on &__light {
+        fill: yellow;
+    }
+
+    &__container.on &__ray {
+        visibility: visible;
+    }
+}
 
 .modal {
     position: absolute;

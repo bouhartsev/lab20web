@@ -110,6 +110,28 @@ button {
   stroke-dashoffset: -134;
 }
 
+.lamp {
+  width: 300px;
+}
+.lamp > * {
+  fill: none;
+  stroke: black;
+  stroke-width: 10px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+.lamp__ray {
+  stroke: yellow;
+  visibility: hidden;
+}
+.lamp__container.on .lamp__light {
+  fill: yellow;
+}
+.lamp__container.on .lamp__ray {
+  visibility: visible;
+}
+
 .modal {
   position: absolute;
   top: 0;

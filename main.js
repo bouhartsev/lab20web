@@ -15,7 +15,7 @@ window.onload = function(){
         el.setAttribute('style', 'stroke: #ffffff;'); 
         document.querySelector('#clock').appendChild(el); 
     }
-
+    
     let time_text = document.getElementById("time_text");
     let clock_hour = document.getElementById("hourhand");
     let clock_minute = document.getElementById("minutehand");
