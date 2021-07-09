@@ -23,7 +23,7 @@
     min-height: 100px;
 
     >* {
-        margin: 0 20px;
+        margin: 0 40px;
         box-sizing: border-box;
     }
 
@@ -35,6 +35,11 @@
     &__menu, &__menu>* {
         position: relative;
     }
+}
+
+.main {
+    text-align: center;
+    margin: 50px auto;
 }
 
 .footer {

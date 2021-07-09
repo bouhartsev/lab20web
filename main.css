@@ -1,7 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
+  overflow-y: overlay;
+  overflow-x: hidden;
 }
 
 a {
@@ -19,12 +25,16 @@ a:focus {
   outline: none;
 }
 
-.on-hover, .menu__link .link__icon {
-  transition-property: fill, color;
+button {
+  cursor: pointer;
+}
+
+.on-hover, .modal__close > *, .menu__link .link__icon {
+  transition-property: stroke, color;
   transition-duration: 0.2s;
 }
 
-.on-hover:hover, .menu__link:focus > .on-hover, .menu__link .link__icon:hover, .menu__link:focus > .link__icon {
+.on-hover:hover, .modal__close > :hover, .menu__link:focus > .on-hover, .modal__close.menu__link:focus > *, .menu__link .link__icon:hover, .menu__link:focus > .link__icon {
   color: #97d9ff;
   stroke: #97d9ff;
 }
@@ -100,6 +110,66 @@ a:focus {
   stroke-dashoffset: -134;
 }
 
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 10% auto;
+  padding: 10px;
+  width: 320px;
+  z-index: 3;
+}
+.modal[data-visibility=false] {
+  visibility: hidden;
+}
+.modal::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: -1;
+}
+.modal::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -2;
+}
+.modal__close {
+  position: absolute;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  overflow: hidden;
+  padding: 0;
+  border: none;
+  background: none;
+}
+.modal__close > * {
+  width: 100%;
+  stroke-width: 4px;
+  stroke: black;
+}
+.modal__clock {
+  max-height: 30vh;
+}
+.modal #time_text {
+  font-family: "Arial", sans-serif;
+}
+
+.rickroll {
+  text-decoration: underline;
+}
+
 .svg-sprite__unvisible {
   display: none;
 }
@@ -119,7 +189,7 @@ a:focus {
   min-height: 100px;
 }
 .header > * {
-  margin: 0 20px;
+  margin: 0 40px;
   box-sizing: border-box;
 }
 .header .header__brand {
@@ -128,6 +198,11 @@ a:focus {
 }
 .header__menu, .header__menu > * {
   position: relative;
+}
+
+.main {
+  text-align: center;
+  margin: 50px auto;
 }
 
 .footer {

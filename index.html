@@ -30,6 +30,29 @@
                 <circle stroke-width="2" r="9" cx="14" cy="14"/>
                 <line stroke-width="2" x1="27" x2="21" y1="27" y2="21"/>
             </symbol>
+            <symbol id="icon_close">
+                <line x1="10" y1="10" x2="40" y2="40"></line> 
+                <line x1="40" y1="10" x2="10" y2="40"></line> 
+            </symbol>
+            <symbol id="lamp">
+                
+            </symbol>
+            <symbol id="clock">
+                <filter id="innerShadow" x="-20%" y="-20%" width="140%" height="140%"> 
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/> 
+                    <feOffset in="blur" dx="2.5" dy="2.5"/> 
+                </filter>
+                <g> 
+                <circle id="shadow" style="fill:rgba(0,0,0,0.1)" cx="97" cy="100" r="87" filter="url(#innerShadow)"></circle> 
+                <circle id="circle" style="stroke: #FFF; stroke-width: 12px; fill:#20B7AF" cx="100" cy="100" r="80"></circle> 
+                </g> 
+                <g> 
+                <line x1="100" y1="100" x2="100" y2="60" transform="rotate(0 100 100)" style="stroke-width: 4px; stroke: #fffbf9;" id="hourhand"></line> 
+                <line x1="100" y1="100" x2="100" y2="45" transform="rotate(45 100 100)" style="stroke-width: 3px; stroke: #fdfdfd;" id="minutehand"></line> 
+                <line x1="100" y1="100" x2="100" y2="35" transform="rotate(90 100 100)" style="stroke-width: 2px; stroke: #C1EFED;" id="secondhand"></line> 
+                </g> 
+                <circle id="center" style="fill:#128A86; stroke: #C1EFED; stroke-width: 2px;" cx="100" cy="100" r="3"></circle> 
+            </symbol>
         </svg>
     </noindex>
     
@@ -58,14 +81,31 @@
     </header>
     
     <main class="main">
-         <!-- Lamp with turning on (svg+js) -->
-         <!-- Open modal button -->
-         <!-- Modal with close button, watch with current time and text "Time to give an 'A'!" -->
+        <!-- Lamp with turning on (svg+js) -->
+        <svg>
+            <use xlink:href="#lamp"></use>
+        </svg>
+        <!--  -->
+        <button onclick="toggleModel()">Open modal</button>
+        <div id="popup" class="modal" data-visibility='false'>
+            <button aria-label="Close modal" onclick="toggleModel()" class="modal__close">
+                <svg viewbox="0 0 50 50">
+                    <use xlink:href="#icon_close"></use>
+                </svg>
+            </button>
+            <p>What time is it?</p>
+            <p>It's time to <a href="https://youtu.be/dQw4w9WgXcQ" class="rickroll">give</a> an 'A'!</p>
+            <!-- real time clock -->
+            <svg viewbox="0 0 200 200" class="modal__clock">
+                <use xlink:href="#clock"></use>
+            </svg>
+            <p id="time_text"></p>
+        </div>
     </main>
 
     <footer class="footer">
-        <a href="https://github.com/bouhartsev/lab20web">GitHub Link</a>
-        <a href="//bouhartsev.top">Матвей Бухарцев</a>
+        <a href="https://github.com/bouhartsev/lab20web" target="_blank">GitHub Link</a>
+        <a href="//bouhartsev.top" target="_blank">Matvey Bouhartsev</a>
         <time>2021</time>
     </footer>
 

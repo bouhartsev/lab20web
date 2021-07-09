@@ -2,7 +2,7 @@
 @use '_base' as base;
 
 .on-hover {
-    transition-property: fill, color;
+    transition-property: stroke, color;
     transition-duration: 0.2s;
 }
 .on-hover:hover {
@@ -90,4 +90,75 @@
             stroke-dashoffset: -134;
         }
     }
+}
+
+
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0; 
+    right: 0;
+    margin: 10% auto;
+    padding: 10px;
+    width: 320px;
+    z-index: 3;
+
+    &[data-visibility=false] {
+        visibility: hidden;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        z-index: -1;
+    }
+    
+    &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        z-index: -2;
+    }
+
+    &__close {
+        position: absolute;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+
+        border-radius: 100%;
+        overflow: hidden;
+        padding: 0;
+        border: none;
+        background: none;
+
+        >* {
+            width: 100%;
+            @extend .on-hover;
+            stroke-width: 4px;
+            stroke: black;
+        }
+    }
+
+    &__clock {
+        max-height: 30vh;
+    }
+
+    #time_text {
+        font-family: 'Arial', sans-serif;
+    }
+}
+
+.rickroll {
+    text-decoration: underline;
 }
