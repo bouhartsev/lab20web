@@ -94,7 +94,7 @@
 
 .lamp {
 
-    width: 300px;
+    width: 800px;
 
     >* {
         fill: none;
@@ -117,20 +117,79 @@
     &__container.on &__ray {
         visibility: visible;
     }
+
+    &__btn {
+        cursor: pointer;
+
+        .btn__circle {
+            fill: red;
+        }
+
+        .btn__text {
+            font-size: 40px;
+            stroke: none;
+            fill: white;
+        }
+    }
+
+    &__container.on .btn__circle {
+        fill: green;
+    }
+
+    &__table {
+        stroke: rgba(255, 230, 0, 0.753);
+        visibility: hidden;
+    }
+
+    &__container.on &__table {
+        visibility: visible;
+    }
+}
+
+#btnModalOpen {
+    // position: absolute;
+    $btn-color: black;
+
+    background: $btn-color;
+    color: white;
+    font-size: 30px;
+    padding: 20px;
+    // box-shadow: $btn-color 1px -1px 0,
+    //     $btn-color 2px -2px 0,
+    //     $btn-color 3px -3px 0,
+    //     $btn-color 4px -4px 0,
+    //     $btn-color 5px -5px 0,
+    //     $btn-color 6px -6px 0,
+    //     $btn-color 7px -7px 0,
+    //     $btn-color 8px -8px 0;
+    // box-shadow: @for $i from 1 through 3 {
+    //     $btn-color 2px * $i 2px 0,
+    //   };
 }
 
 .modal {
     position: absolute;
-    top: 0;
+    top: var(--top-scroll);
     left: 0; 
     right: 0;
-    margin: 10% auto;
+    margin: 10vh auto;
+    
     padding: 10px;
-    width: 320px;
+    width: 300px;
+    max-width: 100%;
+    box-sizing: border-box;
+
     z-index: 3;
+
+    visibility: visible;
+    opacity: 1;
+
+    @include base.burger-transition;
+    transition-property: visibility, opacity;
 
     &[data-visibility=false] {
         visibility: hidden;
+        opacity: 0;
     }
 
     &::after {

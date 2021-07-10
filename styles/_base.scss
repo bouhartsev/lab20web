@@ -1,3 +1,7 @@
+:root {
+    --top-scroll: 0px;
+}
+
 $base-color: black;
 $hover-color: rgb(151, 217, 255);
 
@@ -42,4 +46,8 @@ a:focus {
 
 button {
     cursor: pointer;
+}
+
+.overflow-hidden {
+    overflow: hidden;
 }

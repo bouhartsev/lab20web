@@ -1,6 +1,26 @@
+function onEsc(e){
+    if(e.key === "Escape") {
+        toggleModel();
+    }
+}
+
 function toggleModel() {
+    document.documentElement.style.setProperty("--top-scroll", document.documentElement.scrollTop+'px');
     document.querySelector('#popup').setAttribute('data-visibility', (document.querySelector('#popup').getAttribute('data-visibility')==='false'));
-    document.body.set
+    let isOn = document.body.classList.toggle('overflow-hidden');
+
+    if (isOn) document.body.addEventListener('keyup', onEsc);
+    else {
+        document.body.removeEventListener('keyup', onEsc);
+    }
+
+    return 0;
+}
+
+function toggleLamp() {
+    let isOn = document.querySelector('.lamp__container').classList.toggle('on');
+    document.querySelector('.btn__text').innerHTML = (isOn) ? 'on' : 'off';
+
     return 0;
 }
 
@@ -15,7 +35,7 @@ window.onload = function(){
         el.setAttribute('style', 'stroke: #ffffff;'); 
         document.querySelector('#clock').appendChild(el); 
     }
-    
+
     let time_text = document.getElementById("time_text");
     let clock_hour = document.getElementById("hourhand");
     let clock_minute = document.getElementById("minutehand");
@@ -39,5 +59,8 @@ window.onload = function(){
         clock_minute.setAttribute('transform', 'rotate(' + (time/10) + ' 100 100)');
         clock_second.setAttribute('transform', 'rotate(' + (time*6) + ' 100 100)');
 
-   }, 1000);
+    }, 1000);
+
+    document.querySelector('#btnModalOpen').onclick = toggleModel;
+    document.querySelector('#btnModalClose').onclick = toggleModel;
 }
