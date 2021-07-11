@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     
-    <title>SCSS, SVG - Бухарцев</title>
+    <title>SCSS, SVG - Bouhartsev 201-321</title>
     
     <meta http-equiv="content-language" content="ru-RU"/>
     
@@ -37,10 +37,10 @@
             </symbol>
             <symbol id="lamp" xmlns="http://www.w3.org/2000/svg">
                 <g class="lamp__container">
-                    <g onclick="toggleLamp()" class="lamp__btn">
+                    <a xlink:href="" onclick="return toggleLamp()" class="lamp__btn">
                         <circle cx="290" cy="65" r="50" class="btn__circle"/>
                         <text x="290" y="75" text-anchor="middle" class="btn__text">off</text>
-                    </g>
+                    </a>
                     <path transform="translate(0 100)" d="M 250,0  C 100,100 400,200 400,300 C 400,400 200,300 100,300 C 100,300 25,300 90,490 C 90,490 200,800 335,890"></path>
                     <g transform="translate(250 500)">
                         <path d="M 155.7,434.2 c -39.5,0 -71.5,27.7 -71.5,61.8 h 143 C 227.2,461.8,195.2,434.2,155.7,434.2 z"/>
@@ -121,7 +121,7 @@
                 </svg>
             </button>
             <p>What time is it?</p>
-            <p>It's time to <a href="https://youtu.be/dQw4w9WgXcQ" class="rickroll">give</a> an 'A'!</p>
+            <p>It's time to <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" class="rickroll">give</a> an 'A'!</p>
             <!-- real time clock -->
             <svg viewbox="0 0 200 200" class="modal__clock">
                 <use xlink:href="#clock"></use>

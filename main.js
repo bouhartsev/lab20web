@@ -18,10 +18,11 @@ function toggleModel() {
 }
 
 function toggleLamp() {
+    document.querySelector('#btnModalOpen').classList.toggle('visible');
     let isOn = document.querySelector('.lamp__container').classList.toggle('on');
     document.querySelector('.btn__text').innerHTML = (isOn) ? 'on' : 'off';
 
-    return 0;
+    return false;
 }
 
 window.onload = function(){
